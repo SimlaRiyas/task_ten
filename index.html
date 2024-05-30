@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Stylesheet for the page is written on style.css (a new file is created in the same folder)-->
+    <link rel="stylesheet" href="style.css">
+    <title>Register</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form id="frmSubmit" action="submit.php" method="GET" onsubmit="return validateForm(event)">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Password (Confirm):</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required onchange="validateForm()" style="margin-bottom: 0px;">
+            <div id="passwordError" style="color: red; display: none;">Passwords do not match</div>
+
+            <div id="buttons">
+                <button type="submit" id="submit"><b>Submit</b></button>
+                <button type="button" id="reset" onclick="resetForm();"><b>Reset</b></button>
+            </div>
+        </form>
+    </div>
+
+    <!--JS functions for the page is written on script.js (a new file  named script.js is created in the same folder for that)-->
+    <script src="script.js"></script>
+</body>
+
+</html>
